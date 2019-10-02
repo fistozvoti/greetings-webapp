@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="greet.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="heading">
+            <div class="twelve columns box">
+                <h1>Greetings</h1>
+            </div>
+        </div>
+
+        {{!-- <div class="control"> --}}
+
+            <div class="row">
+                <div class="eight columns">
+
+                    <form action="/select/language" method="POST">
+                    <input name="name" class="nameSetBox" class="nameSetBox" placeholder="Enter your name">
+                    <strong>Counter:{{counter}}</strong>
+                    <span class="total "><span class="nameCounter"></span> </span>
+                </div>
+            </div>
+
+            {{!-- <div class="control"> --}}
+
+
+            <label>
+                <input class="radios" type="radio" name="language" value="English">
+                English
+            </label>
+            <label>
+                <input class="radios" type="radio" name="language" value="IsiXhosa">
+                IsiXhosa
+            </label>
+            <label>
+                <input class="radios" type="radio" name="language" value="Afrikaans">
+                Afrikaans
+            </label>
+
+            <button class="button-primary greetMeBtn" type="submit" name="submit">Greet</button>
+            <span><button class="button-primary resetBtn" type="submit" name="reset">Reset</button></span>
+
+            </form>
+        </div>
+
+        <div class="greetingOutputField">{{greet}}</div>
+    {{!-- </div> --}}
+    </div>
+
+</body>
+
+</html>
