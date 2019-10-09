@@ -5,7 +5,6 @@ module.exports = function (greetFactory) {
         res.render('index', {
             greet: greetFactory.greetTheUser(),
             counter: greetFactory.counterValue(),
-            // messages: req.flash('error')
         });
     }
     
@@ -30,13 +29,23 @@ module.exports = function (greetFactory) {
         req.flash('error', 'Please enter name or select language!');
         res.redirect('/');
     }
-    
+
     greetFactory.greetUser(name, language);
     res.redirect('/');
 }
+
+    function reset(req, res){
+
+        greetFactory.reset()
+        res.render('index', {
+            greet: greetFactory.greetTheUser(),
+            counter: greetFactory.counterValue(),
+        });
+    }
     return {
         index,
-        greet
+        greet,
+        reset
     }
 
 

@@ -56,7 +56,8 @@ app.set('view engine', 'handlebars');
 
 //Routes for my app
 app.get('/', greetRoutes.index);
-app.post('/inputName/greetUser/', greetRoutes.greet)
+app.post('/inputName/greetUser/', greetRoutes.greet);
+app.post('/reset', greetRoutes.reset);
 
 let PORT = process.env.PORT || 3001;
 

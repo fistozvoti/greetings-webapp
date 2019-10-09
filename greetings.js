@@ -30,6 +30,12 @@ module.exports = function greetFactory() {
 
         }
     }
+
+    reset = () => {
+        theNames = {};
+        theGreet = ''
+    }
+
     greetTheUser = () => theGreet;
 
     updatePeopleObject = () => theNames;
@@ -40,6 +46,7 @@ module.exports = function greetFactory() {
         greetUser,
         counterValue,
         greetTheUser,
+        reset,
         error,
         updatePeopleObject
     }
