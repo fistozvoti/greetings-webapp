@@ -6,7 +6,7 @@ module.exports = function greetFactory() {
     counterValue = () => Object.keys(theNames).length;
 
     greetUser = (name, lang) => {
-        isError = false;
+        // isError = false;
         let upperCaseName = name.toUpperCase().charAt(0) + name.slice(1).toLowerCase();
 
         if (name != '' && lang != undefined) {
@@ -29,17 +29,6 @@ module.exports = function greetFactory() {
             }
 
         }
-
-        if (name === '' && lang != undefined) {
-            isError = true;
-            return 'Please enter name!';
-        }
-        if (lang === undefined && name != '') {
-            isError = true;
-            return 'Please select language!'
-        }
-        isError = true;
-        return 'Please enter name or select language!';
     }
     greetTheUser = () => theGreet;
 

@@ -5,175 +5,29 @@
 
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
 
-/* UNIVERSAL */
+* {
+  font-family: Impact;
+  font-size: x-large;
+  color: blue;
+  line-height: 1.5;
+}
 
-html,
-body {
-  background: url(naruto-team-seven.jpg) no-repeat center center fixed; 
+body { 
+  background: url('http://www.publicdomainpictures.net/pictures/50000/velka/flower-meadow.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  font-size: xx-large;
-  font-family: Impact;  
-  text-align: center;  
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  left: 0;
-  top: 0;
-  font-size: 100%;
 }
-
-/* ROOT FONT STYLES */
-
-* {
-  font-family: Impact;
-  color: orchid;
-  line-height: 1.5;
-}
-
-/* TYPOGRAPHY */
-h1{
-  color: yellow;
-}
-.buttons{
-  color: black;
-}
-
-/* POSITIONING */
-
-.left {
-  text-align: left;
-}
-
-.right {
-  text-align: right;
-}
-.control {
-  width: 100%;
-}
-
-.center {
-  font-size: xx-large;
-  font-family: Impact;
-  text-align: center;
-}
-
-.danger {
-  color: red;
-}
-
-.justify {
-  text-align: justify;
-}
-
-/* ==== GRID SYSTEM ==== */
-
-.container {
-  text-align: center; 
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  display: grid;
-  font-size: xx-large;
-  font-family: Impact;
-
-}
-input[name=name] {
-  border: 2px solid red;
-  border-radius: 10px;
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-}
-.row {
-  position: relative;
-  width: 100%;
-}
-
-.col-1,
-.col-2,
-.col-3,
-.col-4,
-.col-5,
-.col-6,
-.col-7,
-.col-8,
-.col-9,
-.col-10,
-.col-11,
-.col-12 {
-  width: 96%;
-}
-
-.col-1-sm {
-  width: 4.33%;
-}
-
-.col-2-sm {
-  width: 12.66%;
-}
-
-.col-3-sm {
-  width: 21%;
-}
-
-.col-4-sm {
-  width: 29.33%;
-  float: left;
-}
-
-.col-5-sm {
-  width: 37.66%;
-}
-
-.col-6-sm {
-  width: 46%;
-}
-
-.col-7-sm {
-  width: 54.33%;
-}
-
-.col-8-sm {
-  width: 62.66%;
-}
-
-.col-9-sm {
-  width: 71%;
-}
-
-.col-10-sm {
-  width: 79.33%;
-}
-
-.col-11-sm {
-  width: 87.66%;
-}
-
-.col-12-sm {
-  width: 96%;
-}
-
-.row::after {
-	content: "";
-	display: table;
-  clear: both;
-}
-
-.hidden-sm {
-  display: none;
+.error{
+  color: crimson;
+  scroll-margin-bottom: 1em;
 }
 
 @media only screen and (min-width: 33.75em) {  /* 540px */
   .container {
     text-align: center; 
-    width: 75%;
-    /* margin-left: auto;
-    margin-right: auto; */
+    /* width: 75%; */
     display: grid;
   }
 }
@@ -181,9 +35,7 @@ input[name=name] {
 @media only screen and (min-width: 45em) {  /* 720px */
   .container {
     text-align: center; 
-    width: 80%;
-    /* margin-left: auto;
-    margin-right: auto; */
+    /* width: 80%; */
     display: grid;
   }
   
@@ -192,10 +44,8 @@ input[name=name] {
 @media only screen and (min-width: 60em) { /* 960px */
   .container {
     text-align: center; 
-    width: 75%;
-    max-width: 60rem;
-    /* margin-left: auto;
-    margin-right: auto; */
+    /* width: 75%; */
+    /* max-width: 60rem; */
     display: grid;
   }
 }
