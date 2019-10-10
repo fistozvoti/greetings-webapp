@@ -28,10 +28,12 @@ module.exports = function (greetFactory) {
         isError = true;
         req.flash('error', 'Please enter name or select language!');
         res.redirect('/');
+    }else {
+        greetFactory.greetUser(name, language);
+        res.redirect('/');
     }
 
-    greetFactory.greetUser(name, language);
-    res.redirect('/');
+    
 }
 
     function reset(req, res){
