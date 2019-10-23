@@ -7,12 +7,12 @@ module.exports = function (greetFactory) {
             counter: greetFactory.counterValue(),
         });
     }
-    
+
     function greet(req, res) {
-         isError = false
+        isError = false
         var name = req.body.name;
         var language = req.body.language;
-        
+
 
         if (name === '' && language !== undefined) {
             isError = true;
@@ -24,19 +24,19 @@ module.exports = function (greetFactory) {
             req.flash('error', 'Please select language!');
             res.redirect('/');
         }
-        else if(name === '' && language === undefined){
-        isError = true;
-        req.flash('error', 'Please enter name or select language!');
-        res.redirect('/');
-    }else {
-        greetFactory.greetUser(name, language);
-        res.redirect('/');
+        else if (name === '' && language === undefined) {
+            isError = true;
+            req.flash('error', 'Please enter name or select language!');
+            res.redirect('/');
+        } else {
+            greetFactory.greetUser(name, language);
+            res.redirect('/');
+        }
+
+
     }
 
-    
-}
-
-    function reset(req, res){
+    function reset(req, res) {
 
         greetFactory.reset()
         res.render('index', {

@@ -17,18 +17,25 @@
 <body>
 
     <div class="text-center">
-    
+
         <h1>Greetings Webapp</h1>
 
         <div class="error">
             {{messages.error}}
         </div>
-        
+
         <form action="/inputName/greetUser" method="POST">
             <div class="row d-flex justify-content-center">
                 <div class="col-md-6 form-group w-25">
                     <input type="text" name="name" class="form-control text-center" placeholder="Enter your name">
                 </div>
+            </div>
+            <div class="">
+                <span>
+                    <button type="button" class="btn btn-success">
+                        <a href="/table">Greeted Users</a>
+                    </button>
+
             </div>
 
 
@@ -65,12 +72,12 @@
         </form>
         <br>
         <form action="/reset" method="POST">
-        <button class="btn btn-primary resetBtn" type="submit" name="reset">Reset</button>
+            <button class="btn btn-primary resetBtn" type="submit" name="reset">Reset</button>
         </form>
 
     </div>
 
-   
+
 
 </body>
 
