@@ -39,6 +39,7 @@ app.use(session({
 // initialise the flash middleware
 app.use(flash());
 
+//exposin the static folders
 app.use(express.static('public'));
 
 // parse application/x-www-form-urlencoded
