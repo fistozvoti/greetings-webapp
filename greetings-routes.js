@@ -1,19 +1,21 @@
 module.exports = function (greetFactory) {
 
-    function index(req, res) {
+    async function index(req, res) {
+        let showCounter = await greetFactory.displayCounter();        
 
         res.render('index', {
-            greet: greetFactory.greetTheUser(),
-            counter: greetFactory.counterValue(),
+            greet: await greetFactory.greetTheUser(),
+            counter: showCounter,
         });
     }
 
-    function greet(req, res) {
+    async function greet(req, res) {
         isError = false
-        var name = req.body.name;
+        var name = req.body.name.replace(/[0-9]/g, '').replace(/[^\w\s]/gi, '');
         var language = req.body.language;
 
-
+        
+        
         if (name === '' && language !== undefined) {
             isError = true;
             req.flash('error', 'Please enter name!');
@@ -26,28 +28,56 @@ module.exports = function (greetFactory) {
         }
         else if (name === '' && language === undefined) {
             isError = true;
-            req.flash('error', 'Please enter name or select language!');
+            req.flash('error', 'Please enter name & select language!');
             res.redirect('/');
         } else {
-            greetFactory.greetUser(name, language);
+            await greetFactory.greetUser(name, language);
             res.redirect('/');
         }
-
-
     }
 
-    function reset(req, res) {
+    async function counter (req, res) {
+        let name = req.params.tableOfNames;
+        let number = await greetFactory.displayGreetingsFor(name);
 
-        greetFactory.reset()
-        res.render('index', {
-            greet: greetFactory.greetTheUser(),
-            counter: greetFactory.counterValue(),
+        if (number === 1) {
+            req.flash('recMsg', 'The user ' + name + ' got greeted ' + number + ' time');
+        } else {
+            req.flash('recMsg', 'The user ' + name + ' got greeted ' + number + ' times');
+        }
+            res.render('counter', {
+            num: number 
+            })
+    }
+
+    async function table (req, res) {
+        let listNames = await greetFactory.tableInfo();
+        res.render('table', {
+            allNames: listNames
         });
     }
+
+    async function reset(req, res) {
+        let showCounter = await greetFactory.displayCounter();    
+        greetFactory.reset()    
+
+        res.render('index', {
+            greet: await greetFactory.greetTheUser(),
+            counter: showCounter,
+        });
+    }
+
+    function homePage(req, res) {
+        res.redirect('/');
+    }
+
     return {
         index,
         greet,
-        reset
+        reset,
+        table,
+        counter,
+        homePage,
     }
 
 

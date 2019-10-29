@@ -8,20 +8,38 @@
 * {
   font-family: Impact;
   font-size: x-large;
-  color: blue;
+  color: cyan;
   line-height: 1.5;
 }
 
 body { 
-  background: url('http://www.publicdomainpictures.net/pictures/50000/velka/flower-meadow.jpg') no-repeat center center fixed; 
+  background: url("https://cdn.hipwallpaper.com/i/41/40/EaFX5c.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
+a {
+  color: cyan;
+}
+a:hover{
+  color: cyan;
+}
 .error{
-  color: crimson;
+  color: rgb(253, 49, 49);
   scroll-margin-bottom: 1em;
+}
+.text {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+.center{
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
 }
 
 @media only screen and (min-width: 33.75em) {  /* 540px */

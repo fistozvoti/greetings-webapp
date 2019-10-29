@@ -7,8 +7,6 @@ const greetFactory = require('./greetings');
 const GreetingsRoutes = require('./greetings-routes')
 
 const app = express();
-const greetingsFactory = greetFactory();
-const greetRoutes = GreetingsRoutes(greetingsFactory)
 
 const pg = require("pg");
 const Pool = pg.Pool;
@@ -20,12 +18,15 @@ if (process.env.DATABASE_URL && !local){
     useSSL = true;
 }
 // which db connection to use
-const connectionString = process.env.DATABASE_URL || 'postgresql://coder:pg123@localhost:5432/...';//Edit table name here!!!
+const connectionString = process.env.DATABASE_URL || 'postgresql://codex:codex123@localhost:5432/greeted_users';
 
 const pool = new Pool({
     connectionString,
     ssl : useSSL
   });
+
+const greetingsFactory = greetFactory(pool);
+const greetRoutes = GreetingsRoutes(greetingsFactory)
 
 
 // initialise session middleware - flash-express depends on it
@@ -57,7 +58,11 @@ app.set('view engine', 'handlebars');
 //Routes for my app
 app.get('/', greetRoutes.index);
 app.post('/inputName/greetUser/', greetRoutes.greet);
+app.get('/counter/:tableOfNames', greetRoutes.counter);
+app.post('/backToHomePage', greetRoutes.homePage);
+app.get('/table',greetRoutes.table)
 app.post('/reset', greetRoutes.reset);
+app.get('/counter/:userName', greetRoutes.counter);
 
 let PORT = process.env.PORT || 3001;
 
