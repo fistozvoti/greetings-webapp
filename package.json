@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "mocha",
-    "mocha": ".node_modules/bin/mocha"
+    "test": "mocha"
   },
   "directories": {
     "test": "test"
@@ -20,7 +19,9 @@
     "express-flash": "0.0.2",
     "express-handlebars": "^3.1.0",
     "express-session": "^1.16.2",
-    "mocha": "^6.2.1",
     "pg": "^7.12.1"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.2"
   }
 }
