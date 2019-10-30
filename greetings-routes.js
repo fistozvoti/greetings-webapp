@@ -59,7 +59,8 @@ module.exports = function (greetFactory) {
 
     async function reset(req, res) {
         let showCounter = await greetFactory.displayCounter();    
-        greetFactory.reset()    
+        greetFactory.reset() 
+          
 
         res.render('index', {
             greet: await greetFactory.greetTheUser(),
@@ -71,6 +72,10 @@ module.exports = function (greetFactory) {
         res.redirect('/');
     }
 
+    function backToGreeted(req, res){
+        res.redirect('/table')
+    }
+
     return {
         index,
         greet,
@@ -78,6 +83,7 @@ module.exports = function (greetFactory) {
         table,
         counter,
         homePage,
+        backToGreeted
     }
 
 

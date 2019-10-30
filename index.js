@@ -64,6 +64,7 @@ app.post('/backToHomePage', greetRoutes.homePage);
 app.get('/table',greetRoutes.table)
 app.post('/reset', greetRoutes.reset);
 app.get('/counter/:userName', greetRoutes.counter);
+app.post('/backToGreeted', greetRoutes.backToGreeted);
 
 let PORT = process.env.PORT || 3001;
 
