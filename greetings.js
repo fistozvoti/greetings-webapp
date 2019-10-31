@@ -3,7 +3,7 @@ module.exports = function greetFactory(pool) {
     var theGreet = ''
     let isError = false;
     let upperCaseName = '';
-    var counter = 0;
+    let counter = 0;
 
     async function greetUser(name, lang) {
         upperCaseName = name.toUpperCase().charAt(0) + name.slice(1).toLowerCase();

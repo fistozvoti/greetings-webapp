@@ -58,14 +58,13 @@ module.exports = function (greetFactory) {
     }
 
     async function reset(req, res) {
-        let showCounter = await greetFactory.displayCounter();    
-        greetFactory.reset() 
-          
-
+        let showCounter = await greetFactory.displayCounter();
         res.render('index', {
             greet: await greetFactory.greetTheUser(),
             counter: showCounter,
         });
+        greetFactory.reset()   
+         
     }
 
     function homePage(req, res) {
