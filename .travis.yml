@@ -11,7 +11,7 @@ node_js:
   - "9.11.2"
 
 before_script:
-  - psql -c 'create database  greeted_users;' -U postgres
+  - psql -c 'create database greeted_users;' -U postgres
   - psql -U postgres -d greeted_users -a -f database-table.sql
 
 addons:
