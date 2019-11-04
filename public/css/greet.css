@@ -13,17 +13,21 @@
 }
 
 body { 
-  background: url("https://cdn.hipwallpaper.com/i/41/40/EaFX5c.png") no-repeat center center fixed;
+  background: url("http://images5.fanpop.com/image/photos/30600000/Mordecai-and-Rigby-regular-show-30642146-1280-1024.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
+br {
+  display: block;
+  margin-bottom: 2px;
+}
 a {
-  color: cyan;
+  color: black;
 }
 a:hover{
-  color: cyan;
+  color: black;
 }
 .error{
   color: rgb(253, 49, 49);

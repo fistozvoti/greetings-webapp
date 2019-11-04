@@ -61,7 +61,7 @@ app.get('/', greetRoutes.index);
 app.post('/inputName/greetUser/', greetRoutes.greet);
 app.get('/counter/:tableOfNames', greetRoutes.counter);
 app.post('/backToHomePage', greetRoutes.homePage);
-app.get('/table',greetRoutes.table)
+app.get('/greeted',greetRoutes.table)
 app.post('/reset', greetRoutes.reset);
 app.get('/counter/:userName', greetRoutes.counter);
 app.post('/backToGreeted', greetRoutes.backToGreeted);

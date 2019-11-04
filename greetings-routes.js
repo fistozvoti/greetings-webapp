@@ -73,7 +73,7 @@ module.exports = function (greetFactory) {
     }
 
     function backToGreeted(req, res){
-        res.redirect('/table')
+        res.redirect('/greeted')
     }
 
     return {
