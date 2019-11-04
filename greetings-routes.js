@@ -52,18 +52,19 @@ module.exports = function (greetFactory) {
 
     async function table (req, res) {
         let listNames = await greetFactory.tableInfo();
-        res.render('table', {
-            allNames: listNames
-        });
+
+        if(listNames.length === 0){
+            req.flash('recMsg', 'There are no greeted names yet');
+        }
+
+            res.render('table', {
+                allNames: listNames
+            });
     }
 
     async function reset(req, res) {
-        let showCounter = await greetFactory.displayCounter();
-        res.render('index', {
-            greet: await greetFactory.greetTheUser(),
-            counter: showCounter,
-        });
-        greetFactory.reset()   
+        greetFactory.reset()
+           res.redirect('/')
          
     }
 

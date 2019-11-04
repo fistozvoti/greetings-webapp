@@ -14,7 +14,10 @@ before_script:
   - psql -c 'create database greeted_users;' -U postgres
   - psql -U postgres -d greeted_users -a -f database-table.sql
 
-  addons:
+services:
+  - postgresql
+  
+addons:
   apt:
     sources:
     - precise-pgdg-9.5

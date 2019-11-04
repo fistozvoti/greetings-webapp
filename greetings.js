@@ -67,10 +67,10 @@ module.exports = function greetFactory(pool) {
 
 
     async function reset() {
+        await pool.query('DELETE FROM greeted_users');
         counter = 0;
         theGreet = '';
         upperCaseName = '';
-        await pool.query('DELETE FROM greeted_users');
     }
 
     error = () => isError;
