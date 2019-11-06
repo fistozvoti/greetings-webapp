@@ -19,6 +19,12 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+.greetingOutputField{
+  font-size: large;
+}
+.greetMeBtn{
+  font-size: large;
+}
 br {
   display: block;
   margin-bottom: 2px;
